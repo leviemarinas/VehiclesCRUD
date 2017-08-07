@@ -1,0 +1,31 @@
+//- This is how we extend a template using the 'extends' keyword
+extends ../../../templates/master.pug
+
+//- This is how we insert dynamic content to extended templates
+block content
+    form(method="POST" action="/index/add")
+        .field
+            .label Make
+            .control
+                input.input(type="text" placeholder="Make" name="strMake")
+        .field
+            .label Model
+            .control
+                input.input(type="text" placeholder="Model" name="strModel")
+        .field
+            .label year
+            .control
+                input.input(type="text" placeholder="Year" name="strYear")
+        .field
+            .label PN
+            .control
+                input.input(type="text" placeholder="Plate Number" name="strPN")
+        .field
+            .label Condition
+            .control
+                input.input(type="text" placeholder="Condition" name="strCondition")
+        input(type="submit" value="Submit")
+    br
+    ul
+        a(class = 'button' href = '/index') return to list
+        

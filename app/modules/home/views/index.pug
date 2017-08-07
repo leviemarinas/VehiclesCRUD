@@ -1,0 +1,17 @@
+//- This is how we extend a template using the 'extends' keyword
+extends ../../../templates/master.pug
+
+//- This is how we insert dynamic content to extended templates
+block content
+    h1.title Vehicle List
+    br
+    ul
+        a(class = 'button' href = '/index/add') Add a Vehicle
+        a(class = 'button' href = '/index/search') Search a Vehicle
+        a(class = 'button' href = '/index/update') Update a Vehicle
+        a(class = 'button' href = '/index/delete') Delete a Vehicle
+    hr
+    ul
+        each car in cars
+            li= `${car.intID} - ${car.strMake} - ${car.strModel} - ${car.strYear}`
+    
